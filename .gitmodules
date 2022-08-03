@@ -1,0 +1,3 @@
+[submodule "projCert"]
+	path = projCert
+	url = https://github.com/viren2507/devops.git
