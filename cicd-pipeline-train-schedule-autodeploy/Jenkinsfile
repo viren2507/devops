@@ -43,11 +43,13 @@ pipeline {
                 CANARY_REPLICAS = 1
             }
             steps {
-                kubernetesDeploy(
-                    kubeconfigId: 'kubernetes',
-                    configs: 'cicd-pipeline-train-schedule-autodeploy/train-schedule-kube-canary.yml',
-                    enableConfigSubstitution: true
-                )
+                step([$class: 'KubernetesEngineBuilder', 
+                        projectId: "round-dreamer-355408",
+                        clusterName: "cluster-1",
+                        zone: "us-central1-c",
+                        manifestPattern: 'cicd-pipeline-train-schedule-autodeploy/train-schedule-kube-canary.yml',
+                        credentialsId: "kubernetes",
+                        verifyDeployments: true])
             }
         }
         stage('DeployToProduction') {
