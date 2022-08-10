@@ -45,4 +45,8 @@ spec:
           periodSeconds: 10
         resources:
           requests:
-            cpu: 200m
+            memory: "100Mi"
+          limits:
+            memory: "200Mi"
+        command: ["stress"]
+        args: ["--vm", "1", "--vm-bytes", "150M", "--vm-hang", "1"]
