@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: train-schedule
-        image: viren25/train-schedule:$BUILD_NUMBER
+        image: viren25/train-schedule:latest
         ports:
         - containerPort: 8080
         livenessProbe:
