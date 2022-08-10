@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'Running build automation'
                 sh './cicd-pipeline-train-schedule-autodeploy/gradlew build --no-daemon'
-                archiveArtifacts artifacts: 'cicd-pipeline-train-schedule-autodeploy/dist/trainSchedule.zip'
+                archiveArtifacts artifacts: '**/*'
             }
         }
         stage('Build Docker Image') {
