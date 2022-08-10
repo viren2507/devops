@@ -10,7 +10,7 @@ spec:
   ports:
   - protocol: TCP
     port: 8080
-    nodePort: 32001
+    nodePort: 31001
 
 ---
 
@@ -21,7 +21,7 @@ metadata:
   labels:
     app: train-schedule
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: train-schedule
