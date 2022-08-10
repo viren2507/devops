@@ -49,8 +49,7 @@ pipeline {
                         clusterName: env.CLUSTER_NAME,
                         zone: env.LOCATION,
                         manifestPattern: 'cicd-pipeline-train-schedule-autodeploy/train-schedule-kube-canary.yml',
-                        credentialsId: env.CREDENTIALS_ID,
-                        verifyDeployments: true])
+                        credentialsId: env.CREDENTIALS_ID])
             }
         }
         stage('DeployToProduction') {
@@ -64,8 +63,8 @@ pipeline {
                         clusterName: env.CLUSTER_NAME,
                         zone: env.LOCATION,
                         manifestPattern: 'cicd-pipeline-train-schedule-autodeploy/train-schedule-kube-canary.yml',
-                        credentialsId: env.CREDENTIALS_ID,
-                        verifyDeployments: true])
+                        credentialsId: env.CREDENTIALS_ID])
+                        
               
             }
         }
